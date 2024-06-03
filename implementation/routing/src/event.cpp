@@ -344,9 +344,6 @@ event::set_eventgroups(const std::set<eventgroup_t> &_eventgroups) {
 
 void
 event::update_cbk(boost::system::error_code const &_error) {
-    if (!is_provided_) {
-        return;
-    }
 
     if (!_error) {
         std::lock_guard<std::mutex> its_lock(mutex_);
